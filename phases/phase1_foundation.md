@@ -106,7 +106,7 @@ class Settings(BaseSettings):
 ### Test 1 — Import models with no errors
 
 ```bash
-python -c "
+python3 -c "
 from common.models import Request, Response, WorkerStatus
 import time
 
@@ -145,7 +145,7 @@ WorkerStatus load_score: 0.0
 ### Test 2 — Config loads from .env
 
 ```bash
-python -c "
+python3 -c "
 from common.config import config
 print(f'Ollama URL   : {config.ollama_base_url}')
 print(f'Model        : {config.ollama_model}')
@@ -174,7 +174,7 @@ Fault Sim    : True
 ### Test 3 — Ollama API reachable
 
 ```bash
-python -c "
+python3 -c "
 import asyncio
 import aiohttp
 
