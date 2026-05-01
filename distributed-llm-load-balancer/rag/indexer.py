@@ -1,7 +1,15 @@
 # rag/indexer.py
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
+import torch
+torch.set_default_device("cpu")
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 from chromadb.config import Settings
+
+model = SentenceTransformer("all-MiniLM-L6-v2", device="cpu")
 
 # Knowledge base — distributed computing + AI topics
 DOCUMENTS = [
